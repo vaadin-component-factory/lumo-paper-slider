@@ -1,0 +1,35 @@
+paper-slider {
+	--paper-progress-active-color: var(--lumo-primary-color);
+	--paper-slider-knob-color: var(--lumo-primary-color);
+	--paper-slider-knob-start-color: var(--lumo-base-color);
+    --paper-slider-knob-start-border-color: var(--lumo-primary-color-50pct);
+	--paper-progress-secondary-color: var(--lumo-primary-color-50pct);
+	--paper-progress-container-color: var(--lumo-contrast-30pct);
+	--paper-slider-pin-color: var(--lumo-primary-color-50pct);
+	 margin-left: var(--lumo-space-s);
+	 line-height: var(--lumo-space-m);
+}
+
+paper-slider[theme~="error"] {
+	--paper-progress-active-color: var(--lumo-error-color);
+	--paper-slider-knob-color: var(--lumo-error-color);
+    --paper-slider-knob-start-border-color: var(--lumo-error-color-50pct);
+	--paper-progress-secondary-color: var(--lumo-error-color-50pct);
+	--paper-slider-pin-color: var(--lumo-error-color-50pct);
+}
+
+paper-slider[theme~="success"] {
+	--paper-progress-active-color: var(--lumo-success-color);
+	--paper-slider-knob-color: var(--lumo-success-color);
+    --paper-slider-knob-start-border-color: var(--lumo-success-color-50pct);
+	--paper-progress-secondary-color: var(--lumo-success-color-50pct);
+	--paper-slider-pin-color: var(--lumo-success-color-50pct);
+}
+
+paper-slider[theme~="secondary"] {
+	--paper-progress-active-color: var(--lumo-contrast-90pct);
+	--paper-slider-knob-color: var(--lumo-contrast-90pct);
+    --paper-slider-knob-start-border-color: var(--lumo-contrast-40pct);
+	--paper-progress-secondary-color: var(--lumo-contrast-40pct);
+	--paper-slider-pin-color: var(--lumo-contrast-40pct);
+}
