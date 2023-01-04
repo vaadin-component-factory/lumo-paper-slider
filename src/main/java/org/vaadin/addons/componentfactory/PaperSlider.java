@@ -3,7 +3,10 @@ package org.vaadin.addons.componentfactory;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.FocusNotifier.FocusEvent;
 import com.vaadin.flow.component.customfield.CustomField;
+import com.vaadin.flow.shared.Registration;
 
 /**
  * A slider field component.
@@ -29,6 +32,12 @@ public class PaperSlider extends CustomField<Integer> {
         setLabel(label);
         slider.setWidth("100%");
         add(slider);
+        slider.addFocusListener(e -> {
+            fireEvent(new FocusEvent<PaperSlider>(this, e.isFromClient()));
+        });
+        slider.addBlurListener(e -> {
+            fireEvent(new BlurEvent<PaperSlider>(this, e.isFromClient()));
+        });
     }
 
     /**
@@ -209,5 +218,15 @@ public class PaperSlider extends CustomField<Integer> {
                 .removeAll(Stream.of(variants)
                         .map(PaperSliderVariant::getVariantName)
                         .collect(Collectors.toList()));
+    }
+
+    @Override
+    public void focus() {
+        slider.focus();
+    }
+
+    @Override
+    public void blur() {
+        slider.blur();
     }
 }

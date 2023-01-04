@@ -1,5 +1,7 @@
 package org.vaadin.addons.componentfactory;
 
+import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.KeyModifier;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
@@ -25,6 +27,8 @@ public class SliderView extends VerticalLayout {
         slider1.addValueChangeListener(event -> {
             Notification.show("Answer: " + event.getValue());
         });
+        slider1.focus();
+        slider1.addFocusShortcut(Key.KEY_F, KeyModifier.CONTROL);
 
         slider2.setMin(0);
         slider2.setMax(100);
@@ -34,6 +38,12 @@ public class SliderView extends VerticalLayout {
         slider2.addValueChangeListener(event -> {
             Notification.show("Value: " + event.getValue());
         });
+        slider2.addFocusListener(event -> {
+            Notification.show("Focused");
+        });
+        slider2.addBlurListener(event -> {
+            Notification.show("Blurred");
+        });             
 
         slider3.setMin(1);
         slider3.setMax(10);
@@ -55,6 +65,7 @@ public class SliderView extends VerticalLayout {
         slider5.setPinned(true);
         slider5.setSnaps(true);
         slider5.setMaxMarkers(10);
+        slider5.setTabIndex(-1);
 
         Button button = new Button();
         button.addClickListener(e -> {

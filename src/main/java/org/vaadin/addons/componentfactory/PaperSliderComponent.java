@@ -2,6 +2,7 @@ package org.vaadin.addons.componentfactory;
 
 import com.vaadin.flow.component.AbstractSinglePropertyField;
 import com.vaadin.flow.component.ClientCallable;
+import com.vaadin.flow.component.Focusable;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasTheme;
 import com.vaadin.flow.component.Tag;
@@ -18,7 +19,7 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 @CssImport("./paper-slider.css")
 class PaperSliderComponent
         extends AbstractSinglePropertyField<PaperSliderComponent, Integer>
-        implements HasSize, HasTheme {
+        implements HasSize, HasTheme, Focusable<PaperSliderComponent> {
 
     public PaperSliderComponent() {
         this(0);
