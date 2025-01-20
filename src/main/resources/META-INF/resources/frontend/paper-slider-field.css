@@ -1,0 +1,3 @@
+vaadin-custom-field.paper-slider[invalid]::part(label) {
+  color: var(--lumo-error-text-color);
+}

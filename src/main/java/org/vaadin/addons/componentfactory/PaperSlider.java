@@ -5,13 +5,16 @@ import java.util.stream.Stream;
 
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.FocusNotifier.FocusEvent;
+import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.customfield.CustomField;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.shared.Registration;
 
 /**
  * A slider field component.
  */
-public class PaperSlider extends CustomField<Integer> {
+@CssImport("./paper-slider-field.css")
+public class PaperSlider extends CustomField<Integer> implements HasStyle {
 
     PaperSliderComponent slider = new PaperSliderComponent();
 
@@ -30,6 +33,7 @@ public class PaperSlider extends CustomField<Integer> {
      */
     public PaperSlider(String label) {
         setLabel(label);
+        addClassName("paper-slider");
         slider.setWidth("100%");
         add(slider);
         slider.addFocusListener(e -> {
@@ -38,6 +42,8 @@ public class PaperSlider extends CustomField<Integer> {
         slider.addBlurListener(e -> {
             fireEvent(new BlurEvent<PaperSlider>(this, e.isFromClient()));
         });
+        setMin(0);
+        setMax(100);
     }
 
     /**
@@ -178,6 +184,8 @@ public class PaperSlider extends CustomField<Integer> {
 
     @Override
     public void setValue(Integer value) {
+        if (value == null)
+            value = 0;
         if (value < getMin() || value > getMax()) {
             throw new IllegalArgumentException(
                     "Value " + value + " is not in min " + getMin() + " - max "

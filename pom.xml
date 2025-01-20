@@ -6,12 +6,12 @@
 
     <groupId>org.vaadin.addons.componentfactory</groupId>
     <artifactId>lumo-paper-slider</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>Lumo Paper Slider</name>
     <description>Flow integration of Paper Slider</description>
 
     <properties>
-        <vaadin.version>14.9.2</vaadin.version>
+        <vaadin.version>14.11.13</vaadin.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -108,7 +108,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.1.0</version>
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
