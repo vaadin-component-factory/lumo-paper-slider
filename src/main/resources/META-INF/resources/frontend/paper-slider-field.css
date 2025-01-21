@@ -1,3 +1,9 @@
 vaadin-custom-field.paper-slider[invalid]::part(label) {
   color: var(--lumo-error-text-color);
 }
+
+vaadin-custom-field.paper-slider[invalid] > paper-slider {
+  --paper-slider-knob-color: var(--lumo-error-color);
+  border-radius: var(--lumo-border-radius-m);
+  background: var(--lumo-error-color-10pct);
+}

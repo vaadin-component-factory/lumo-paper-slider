@@ -20,8 +20,18 @@ public class PaperSliderTest {
     @Test
     public void setValue_clearWorks() {
         PaperSlider paperSlider = new PaperSlider();
-        paperSlider.clear();;
+        paperSlider.clear();
         Assert.assertEquals(Integer.valueOf(0), paperSlider.getValue());
+    }
+
+    @Test
+    public void setValue_customClearWorks() {
+        PaperSlider paperSlider = new PaperSlider();
+        paperSlider.setMin(-1);
+        paperSlider.setMax(10);
+        paperSlider.setEmptyValue(-1);
+        paperSlider.clear();
+        Assert.assertEquals(Integer.valueOf(-1), paperSlider.getValue());
     }
 
     @Test

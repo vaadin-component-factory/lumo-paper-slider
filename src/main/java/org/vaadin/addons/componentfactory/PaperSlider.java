@@ -17,6 +17,7 @@ import com.vaadin.flow.shared.Registration;
 public class PaperSlider extends CustomField<Integer> implements HasStyle {
 
     PaperSliderComponent slider = new PaperSliderComponent();
+    private Integer emptyValue = 0;
 
     /**
      * Default constructor
@@ -182,6 +183,14 @@ public class PaperSlider extends CustomField<Integer> implements HasStyle {
         slider.setValue(value);
     }
 
+    /**
+     * Set the value. Can be null, null is interpreted as 0.
+     *
+     * @param value
+     *            Integer value, null is converted to 0.
+     * @throws IllegalArgumentException
+     *             when value is out of min - max bounds.
+     */
     @Override
     public void setValue(Integer value) {
         if (value == null)
@@ -226,6 +235,21 @@ public class PaperSlider extends CustomField<Integer> implements HasStyle {
                 .removeAll(Stream.of(variants)
                         .map(PaperSliderVariant::getVariantName)
                         .collect(Collectors.toList()));
+    }
+
+    /**
+     * Set value that represent empty value, default is 0.
+     *
+     * @param emptyValue
+     *            Integer value
+     */
+    public void setEmptyValue(Integer emptyValue) {
+        this.emptyValue = emptyValue;
+    }
+
+    @Override
+    public Integer getEmptyValue() {
+        return emptyValue;
     }
 
     @Override

@@ -6,7 +6,7 @@
 
     <groupId>org.vaadin.addons.componentfactory</groupId>
     <artifactId>lumo-paper-slider</artifactId>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
     <name>Lumo Paper Slider</name>
     <description>Flow integration of Paper Slider</description>
 
